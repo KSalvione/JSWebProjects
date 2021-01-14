@@ -1,0 +1,10 @@
+html {
+  /* prevents padding forcing side scroll due to content not fitting page */
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  /* this makes background stretch at least full height of the screen */
+  min-height: 100vh;
+}
