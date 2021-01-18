@@ -26,6 +26,13 @@
 //use const if the value is never changing
 let apiQuotes = [];
 
+//'Show New Quote' function
+function newQuote() {
+  //Pick a random quote from apiQuotes array
+  const quote = apiQuotes[Math.floor(Math.random() * apiQuotes.length)];
+  console.log(quote);
+}
+
 //Get quotes from API using an asynchronous fetch request within a try catch statement
 async function getQuotes() {
   const apiUrl = 'https://type.fit/api/quotes';
@@ -34,7 +41,7 @@ async function getQuotes() {
     const response = await fetch(apiUrl);
     //getting the json response from our api, turn that response into an object, pass it into global variable
     apiQuotes = await response.json();
-    console.log(apiQuotes[12]);
+    newQuote();
   } catch (error) {
     //catch error here
   }
